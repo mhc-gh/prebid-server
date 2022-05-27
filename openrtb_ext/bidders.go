@@ -129,6 +129,7 @@ const (
 	BidderDmx               BidderName = "dmx"
 	BidderDecenterAds       BidderName = "decenterads"
 	BidderDeepintent        BidderName = "deepintent"
+	BidderDianomi           BidderName = "dianomi"
 	BidderEmxDigital        BidderName = "emx_digital"
 	BidderEngageBDR         BidderName = "engagebdr"
 	BidderEPlanning         BidderName = "eplanning"

@@ -9,7 +9,7 @@ import (
 )
 
 func TestJsonSamples(t *testing.T) {
-	bidder, buildErr := Builder(openrtb_ext.Bidderdianomi, config.Adapter{
+	bidder, buildErr := Builder(openrtb_ext.BidderDianomi, config.Adapter{
 		Endpoint: "https://prebid-server-aws.dianomi.net/openrtb2/auction"})
 
 	if buildErr != nil {

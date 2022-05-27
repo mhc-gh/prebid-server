@@ -1,4 +1,4 @@
-package adf
+package dianomi
 
 import (
 	"encoding/json"
@@ -19,7 +19,7 @@ func TestValidParams(t *testing.T) {
 	}
 
 	for _, validParam := range validParams {
-		if err := validator.Validate(openrtb_ext.BidderAdf, json.RawMessage(validParam)); err != nil {
+		if err := validator.Validate(openrtb_ext.BidderDianomi, json.RawMessage(validParam)); err != nil {
 			t.Errorf("Schema rejected dianomi params: %s", validParam)
 		}
 	}

@@ -1,4 +1,4 @@
-package adf
+package dianomi
 
 import (
 	"testing"

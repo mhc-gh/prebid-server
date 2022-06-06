@@ -55,6 +55,6 @@ var invalidParams = []string{
 	`[]`,
 	`{}`,
 	`{"notsmartadId":"123"}`,
-	`{"smartadId":"smartadId"}`,
-	`{"smartadId":"123","priceType":"GROSS"}`,
+	`{"smartadID":"smartadId"}`,
+	`{"SmartadId":"123","priceType":"GROSS"}`,
 }

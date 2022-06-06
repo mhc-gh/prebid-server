@@ -5,23 +5,39 @@
       "id": "test-imp-id-1",
       "ext": {
         "bidder": {
-          "smartadId": "9607"
+          "smartadId": "9526"
         }
       },
-      "native": {
-        "request": "{json string 1}",
-        "ver": "1.2"
+      "video": {
+        "mimes": [
+          "video/mp4"
+        ],
+        "placement": 1
+      },
+      "banner": {
+        "format": [{
+          "w": 300,
+          "h": 250
+        }]
       }
     }, {
       "id": "test-imp-id-2",
       "ext": {
         "bidder": {
-          "smartadId": "9607"
+          "smartadId": "9526"
         }
       },
-      "native": {
-        "request": "{json string 2}",
-        "ver": "1.2"
+      "video": {
+        "mimes": [
+          "video/mp4"
+        ],
+        "placement": 1
+      },
+      "banner": {
+        "format": [{
+          "w": 300,
+          "h": 250
+        }]
       }
     }]
   },
@@ -34,26 +50,42 @@
           "id": "test-imp-id-1",
           "ext": {
             "bidder": {
-              "smartadId": "9607"
+              "smartadId": "9526"
             }
           },
-          "native": {
-            "request": "{json string 1}",
-            "ver": "1.2"
+          "video": {
+            "mimes": [
+              "video/mp4"
+            ],
+            "placement": 1
           },
-          "tagid": "9607"
+          "banner": {
+            "format": [{
+              "w": 300,
+              "h": 250
+            }]
+          },
+          "tagid": "9526"
         }, {
           "id": "test-imp-id-2",
           "ext": {
             "bidder": {
-              "smartadId": "9607"
+              "smartadId": "9526"
             }
           },
-          "native": {
-            "request": "{json string 2}",
-            "ver": "1.2"
+          "video": {
+            "mimes": [
+              "video/mp4"
+            ],
+            "placement": 1
           },
-          "tagid": "9607"
+          "banner": {
+            "format": [{
+              "w": 300,
+              "h": 250
+            }]
+          },
+          "tagid": "9526"
         }]
       }
     },
@@ -66,24 +98,26 @@
             "id": "test-bid-id-1",
             "impid": "test-imp-id-1",
             "price": 10,
-            "adm": "{json response string 1}",
+            "adm": "{video xml}",
             "adomain": [],
             "crid": "test-creative-id-1",
             "ext": {
               "prebid": {
-                "type": "native"
+                "type": "video"
               }
             }
-          }, {
+          }]
+        }, {
+          "bid": [{
             "id": "test-bid-id-2",
             "impid": "test-imp-id-2",
             "price": 2,
-            "adm": "{json response string 2}",
+            "adm": "{banner html}",
             "adomain": [ "ad-domain" ],
             "crid": "test-creative-id-2",
             "ext": {
               "prebid": {
-                "type": "native"
+                "type": "banner"
               }
             }
           }]
@@ -99,30 +133,30 @@
         "id": "test-bid-id-1",
         "impid": "test-imp-id-1",
         "price": 10,
-        "adm": "{json response string 1}",
+        "adm": "{video xml}",
         "crid": "test-creative-id-1",
         "ext": {
           "prebid": {
-            "type": "native"
+            "type": "video"
           }
         }
       },
-      "type": "native"
+      "type": "video"
     }, {
       "bid": {
         "id": "test-bid-id-2",
         "impid": "test-imp-id-2",
         "price": 2,
-        "adm": "{json response string 2}",
+        "adm": "{banner html}",
         "adomain": [ "ad-domain" ],
         "crid": "test-creative-id-2",
         "ext": {
           "prebid": {
-            "type": "native"
+            "type": "banner"
           }
         }
       },
-      "type": "native"
+      "type": "banner"
     }]
   }]
 }

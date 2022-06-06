@@ -51,7 +51,7 @@ func (a *adapter) MakeRequests(request *openrtb2.BidRequest, requestInfo *adapte
 			continue
 		}
 
-		imp.TagID = dianomiImpExt.smartadID.String()
+		imp.TagID = dianomiImpExt.smartadId.String()
 		validImps = append(validImps, imp)
 
 		// If imps specify priceType they should all be the same. If they differ, only the first one will be used

@@ -88,7 +88,7 @@ func runTargetingAuction(t *testing.T, mockBids map[openrtb_ext.BidderName][]*op
 		me:                &metricsConfig.NilMetricsEngine{},
 		cache:             &wellBehavedCache{},
 		cacheTime:         time.Duration(0),
-		gDPR:              gdpr.AlwaysAllow{},
+		vendorListFetcher: gdpr.NewVendorListFetcher(context.Background(), config.GDPR{}, &http.Client{}, gdpr.VendorListURLMaker),
 		currencyConverter: currency.NewRateConverter(&http.Client{}, "", time.Duration(0)),
 		gdprDefaultValue:  gdpr.SignalYes,
 		categoriesFetcher: categoriesFetcher,
@@ -108,9 +108,11 @@ func runTargetingAuction(t *testing.T, mockBids map[openrtb_ext.BidderName][]*op
 	}
 
 	auctionRequest := AuctionRequest{
-		BidRequest: req,
-		Account:    config.Account{},
-		UserSyncs:  &emptyUsersync{},
+		BidRequestWrapper:      &openrtb_ext.RequestWrapper{BidRequest: req},
+		Account:                config.Account{},
+		UserSyncs:              &emptyUsersync{},
+		GDPRPermissionsBuilder: mockGDPRPermissionsBuilder,
+		TCF2ConfigBuilder:      mockTCF2ConfigBuilder,
 	}
 
 	debugLog := DebugLog{}
@@ -126,10 +128,10 @@ func runTargetingAuction(t *testing.T, mockBids map[openrtb_ext.BidderName][]*op
 	return buildBidMap(bidResp.SeatBid, len(mockBids))
 }
 
-func buildAdapterMap(bids map[openrtb_ext.BidderName][]*openrtb2.Bid, mockServerURL string, client *http.Client) map[openrtb_ext.BidderName]adaptedBidder {
-	adapterMap := make(map[openrtb_ext.BidderName]adaptedBidder, len(bids))
+func buildAdapterMap(bids map[openrtb_ext.BidderName][]*openrtb2.Bid, mockServerURL string, client *http.Client) map[openrtb_ext.BidderName]AdaptedBidder {
+	adapterMap := make(map[openrtb_ext.BidderName]AdaptedBidder, len(bids))
 	for bidder, bids := range bids {
-		adapterMap[bidder] = adaptBidder(&mockTargetingBidder{
+		adapterMap[bidder] = AdaptBidder(&mockTargetingBidder{
 			mockServerURL: mockServerURL,
 			bids:          bids,
 		}, client, &config.Configuration{}, &metricsConfig.NilMetricsEngine{}, openrtb_ext.BidderAppnexus, nil)

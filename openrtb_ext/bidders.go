@@ -77,6 +77,7 @@ func IsBidderNameReserved(name string) bool {
 // Please keep this list alphabetized to minimize merge conflicts.
 const (
 	Bidder33Across          BidderName = "33across"
+	BidderAax               BidderName = "aax"
 	BidderAceex             BidderName = "aceex"
 	BidderAcuityAds         BidderName = "acuityads"
 	BidderAdf               BidderName = "adf"
@@ -115,6 +116,7 @@ const (
 	BidderBidmyadz          BidderName = "bidmyadz"
 	BidderBidsCube          BidderName = "bidscube"
 	BidderBizzclick         BidderName = "bizzclick"
+	BidderBliink            BidderName = "bliink"
 	BidderBmtm              BidderName = "bmtm"
 	BidderBrightroll        BidderName = "brightroll"
 	BidderCoinzilla         BidderName = "coinzilla"
@@ -197,9 +199,11 @@ const (
 	BidderSonobi            BidderName = "sonobi"
 	BidderSovrn             BidderName = "sovrn"
 	BidderStreamkey         BidderName = "streamkey"
+	BidderStroeerCore       BidderName = "stroeerCore"
 	BidderSynacormedia      BidderName = "synacormedia"
 	BidderTappx             BidderName = "tappx"
 	BidderTelaria           BidderName = "telaria"
+	BidderTrafficGate       BidderName = "trafficgate"
 	BidderTriplelift        BidderName = "triplelift"
 	BidderTripleliftNative  BidderName = "triplelift_native"
 	BidderTrustX            BidderName = "trustx"
@@ -226,6 +230,7 @@ const (
 func CoreBidderNames() []BidderName {
 	return []BidderName{
 		Bidder33Across,
+		BidderAax,
 		BidderAceex,
 		BidderAcuityAds,
 		BidderAdf,
@@ -264,6 +269,7 @@ func CoreBidderNames() []BidderName {
 		BidderBidmyadz,
 		BidderBidsCube,
 		BidderBizzclick,
+		BidderBliink,
 		BidderBmtm,
 		BidderBrightroll,
 		BidderCoinzilla,
@@ -346,9 +352,11 @@ func CoreBidderNames() []BidderName {
 		BidderSonobi,
 		BidderSovrn,
 		BidderStreamkey,
+		BidderStroeerCore,
 		BidderSynacormedia,
 		BidderTappx,
 		BidderTelaria,
+		BidderTrafficGate,
 		BidderTriplelift,
 		BidderTripleliftNative,
 		BidderTrustX,

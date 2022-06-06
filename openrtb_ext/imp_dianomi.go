@@ -5,6 +5,6 @@ import (
 )
 
 type ExtImpDianomi struct {
-	smartadId json.Number `json:"smartadId,omitempty"`
+	SmartAdId json.Number `json:"smartadId,omitempty"`
 	PriceType string      `json:"priceType,omitempty"`
 }

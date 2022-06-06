@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Dianomi Adapter Params",
-  "description": "A schema which validates params accepted by the Dianomi adapter",
+  "title": "dianomi Adapter Params",
+  "description": "A schema which validates params accepted by the dianomi adapter",
   "type": "object",
   "properties": {
     "smartadId": {

@@ -99,7 +99,7 @@
             "impid": "test-imp-id-1",
             "price": 10,
             "adm": "{video xml}",
-            // "adomain": [],
+            "adomain": [],
             "crid": "test-creative-id-1",
             "ext": {
               "prebid": {
@@ -113,7 +113,7 @@
             "impid": "test-imp-id-2",
             "price": 2,
             "adm": "{banner html}",
-            // "adomain": [ "ad-domain" ],
+            "adomain": [ "ad-domain" ],
             "crid": "test-creative-id-2",
             "ext": {
               "prebid": {
@@ -148,7 +148,7 @@
         "impid": "test-imp-id-2",
         "price": 2,
         "adm": "{banner html}",
-        // "adomain": [ "ad-domain" ],
+        "adomain": [ "ad-domain" ],
         "crid": "test-creative-id-2",
         "ext": {
           "prebid": {
